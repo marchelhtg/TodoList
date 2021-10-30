@@ -36,6 +36,7 @@ public class Utility {
 
     public static LocalDate parseDate(String value) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        return LocalDate.parse(value, formatter);
+        String dateStr = value.replaceAll("\\s+", "");
+        return LocalDate.parse(dateStr, formatter);
     }
 }

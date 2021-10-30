@@ -31,7 +31,8 @@ public class Create extends Actions{
             if (!userInput.equals("0")) {
                 String[] parts = userInput.split(",");
                 if (parts.length == 5) {
-                    if (Utility.isDateValid("dd-MM-yyyy", parts[2])) {
+                    String dateStr = parts[2].replaceAll("\\s+","");
+                    if (Utility.isDateValid("dd-MM-yyyy", dateStr)) {
                         if (TodoList.tasks.get(parts[0]) == null) {
                             return userInput;
                         } else {
